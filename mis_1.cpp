@@ -3,6 +3,17 @@
 
 using namespace std;
 
+class ZeroExept
+{
+public:
+    ZeroExept(string mesege): itsMesege(mesege){}
+    ~ZeroExept(){}
+
+    string GetMaseges() { return itsMesege; }
+private:
+    string itsMesege;
+};
+
 int main()
 {
     try
@@ -16,15 +27,15 @@ int main()
         //проверка 
         if(b == 0)
         {
-            throw runtime_error("You can't divide by zero!");
+            throw ZeroExept("You can't divide by zero!");
         }
         c = a / b;
         cout << "the result of division is: " << c;
     }
-    catch(const range_error& err)
+    catch(const ZeroExept& err)
     {
         //обработка исключения
-        cerr << "Exc.: " << err.what() << endl;
+        cerr << "Exc.: " << err.GetMaseges() << endl;
     }
 
     return 0;
