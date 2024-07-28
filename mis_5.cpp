@@ -25,12 +25,14 @@ int main()
 {
     try
     {
+        
         char *var = new char;
+        /* лишняя проверка 
         if (var == nullptr)
         {
             xOutOfMemory *px = new xOutOfMemory;
             throw px;
-        }
+        }*/
     }
     catch (xOutOfMemory *theException)
     {
@@ -39,3 +41,5 @@ int main()
     }
     return 0;
 }
+
+/*Если исключение сработает до удаления объекта xOutOfMemory, это приведет к утечке памяти*/
