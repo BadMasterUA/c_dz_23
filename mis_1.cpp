@@ -9,7 +9,7 @@ public:
     ZeroExept(string mesege): itsMesege(mesege){}
     ~ZeroExept(){}
 
-    string GetMaseges() { return itsMesege; }
+    string GetMaseges() const { return itsMesege; }
 private:
     string itsMesege;
 };
